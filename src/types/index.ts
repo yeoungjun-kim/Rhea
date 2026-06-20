@@ -7,6 +7,7 @@ export interface Product {
   price: number;
   sizes: Size[];
   hex: string;
+  image: string;
   desc: string;
 }
 
@@ -16,6 +17,7 @@ export interface CartItem {
   price: number;
   size: Size;
   hex: string;
+  image: string;
   qty: number;
 }
 

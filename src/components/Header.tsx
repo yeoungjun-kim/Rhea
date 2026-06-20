@@ -26,7 +26,7 @@ export default function Header() {
           aria-label="Open cart"
         >
           BAG
-          <span className="inline-flex items-center justify-center min-w-[18px] h-[18px] text-[10px] bg-oxblood text-bone rounded-full px-1">
+          <span className="inline-flex items-center justify-center min-w-[18px] h-[18px] text-[10px] tracking-normal leading-none bg-oxblood text-bone rounded-full px-1">
             {count}
           </span>
         </button>

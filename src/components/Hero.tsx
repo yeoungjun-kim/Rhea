@@ -25,7 +25,12 @@ export default function Hero() {
         </div>
       </div>
       <div className="mt-14 md:mt-20 h-[40vh] md:h-[55vh] w-full overflow-hidden">
-        <Swatch hex="#3a342c" name="Resort collection hero fabric" className="opacity-90" />
+        <Swatch
+          hex="#3a342c"
+          name="Resort collection model, full look"
+          src="https://images.unsplash.com/photo-1747171053296-84c4e8015b24?fm=jpg&q=80&w=1600&h=900&fit=crop&auto=format"
+          className="opacity-90"
+        />
       </div>
     </section>
   );

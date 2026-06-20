@@ -1,20 +1,35 @@
-import { CartProvider } from "./context/CartContext";
+import { CartProvider, useCart } from "./context/CartContext";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Catalogue from "./components/Catalogue";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import CartDrawer from "./components/CartDrawer";
+import PaymentPage from "./components/PaymentPage";
 
-function App() {
+function AppContent() {
+  const { isCheckingOut } = useCart();
+
+  if (isCheckingOut) {
+    return <PaymentPage />;
+  }
+
   return (
-    <CartProvider>
+    <>
       <Header />
       <Hero />
       <Catalogue />
       <About />
       <Footer />
       <CartDrawer />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <CartProvider>
+      <AppContent />
     </CartProvider>
   );
 }

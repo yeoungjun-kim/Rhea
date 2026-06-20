@@ -4,7 +4,7 @@ import { formatPrice } from "../lib/format";
 import Swatch from "./Swatch";
 
 export default function CartDrawer() {
-  const { items, removeItem, updateQty, subtotal, isOpen, setIsOpen } = useCart();
+  const { items, removeItem, updateQty, subtotal, isOpen, setIsOpen, goToCheckout } = useCart();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -35,7 +35,7 @@ export default function CartDrawer() {
               {items.map((item) => (
                 <li key={item.id + item.size} className="flex gap-4 pb-6 border-b border-line">
                   <div className="w-20 h-24 flex-shrink-0">
-                    <Swatch hex={item.hex} name={item.name} />
+                    <Swatch hex={item.hex} name={item.name} src={item.image} />
                   </div>
                   <div className="flex-1 flex flex-col">
                     <div className="flex justify-between gap-2">
@@ -82,7 +82,10 @@ export default function CartDrawer() {
               <span>{formatPrice(subtotal)}</span>
             </div>
             <p className="text-[11px] text-stone mb-5">Shipping and taxes calculated at checkout.</p>
-            <button className="w-full bg-ink text-bone text-xs tracked py-4 hover:bg-oxblood transition-colors">
+            <button
+              onClick={goToCheckout}
+              className="w-full bg-ink text-bone text-xs tracked py-4 hover:bg-oxblood transition-colors"
+            >
               CHECKOUT
             </button>
           </div>

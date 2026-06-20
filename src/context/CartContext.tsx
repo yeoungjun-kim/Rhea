@@ -11,6 +11,9 @@ interface CartContextValue {
   count: number;
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
+  isCheckingOut: boolean;
+  goToCheckout: () => void;
+  backToStore: () => void;
 }
 
 const CartContext = createContext<CartContextValue | undefined>(undefined);
@@ -18,6 +21,16 @@ const CartContext = createContext<CartContextValue | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+
+  const goToCheckout = () => {
+    setIsOpen(false);
+    setIsCheckingOut(true);
+  };
+
+  const backToStore = () => {
+    setIsCheckingOut(false);
+  };
 
   const addItem = (product: Product, size: Size) => {
     setItems((prev) => {
@@ -25,7 +38,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (existing) {
         return prev.map((i) => (i === existing ? { ...i, qty: i.qty + 1 } : i));
       }
-      return [...prev, { id: product.id, name: product.name, price: product.price, size, hex: product.hex, qty: 1 }];
+      return [...prev, { id: product.id, name: product.name, price: product.price, size, hex: product.hex, image: product.image, qty: 1 }];
     });
     setIsOpen(true);
   };
@@ -45,7 +58,19 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const subtotal = useMemo(() => items.reduce((sum, i) => sum + i.price * i.qty, 0), [items]);
   const count = useMemo(() => items.reduce((sum, i) => sum + i.qty, 0), [items]);
 
-  const value: CartContextValue = { items, addItem, removeItem, updateQty, subtotal, count, isOpen, setIsOpen };
+  const value: CartContextValue = {
+    items,
+    addItem,
+    removeItem,
+    updateQty,
+    subtotal,
+    count,
+    isOpen,
+    setIsOpen,
+    isCheckingOut,
+    goToCheckout,
+    backToStore,
+  };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

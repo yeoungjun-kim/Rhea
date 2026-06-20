@@ -17,7 +17,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group fade-in" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
       <div className="aspect-3/4 w-full overflow-hidden relative mb-4">
-        <Swatch hex={product.hex} name={product.name} className="transition-transform duration-700 group-hover:scale-105" />
+        <Swatch hex={product.hex} name={product.name} src={product.image} className="transition-transform duration-700 group-hover:scale-105" />
         <div
           className={`absolute inset-x-0 bottom-0 bg-bone/95 backdrop-blur px-4 py-3 transition-all duration-300 ${
             hovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
