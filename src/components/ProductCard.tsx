@@ -32,7 +32,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 key={s}
                 onClick={() => setSelectedSize(s)}
                 aria-pressed={selectedSize === s}
-                className={`text-[10px] tracked px-2 py-1 border transition-colors ${
+                className={`text-[10px] tracked indent-[0.22em] px-2 py-1 border transition-colors ${
                   selectedSize === s ? "bg-ink text-bone border-ink" : "border-line text-stone hover:border-ink hover:text-ink"
                 }`}
               >

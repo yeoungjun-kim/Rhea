@@ -89,7 +89,7 @@ function ProductDetail({ product }: { product: Product }) {
                     key={s}
                     onClick={() => setSelectedSize(s)}
                     aria-pressed={selectedSize === s}
-                    className={`min-w-12 text-xs tracked px-3 py-3 border transition-colors ${
+                    className={`min-w-12 text-xs tracked indent-[0.22em] px-3 py-3 border transition-colors ${
                       selectedSize === s ? "bg-ink text-bone border-ink" : "border-line text-stone hover:border-ink hover:text-ink"
                     }`}
                   >
