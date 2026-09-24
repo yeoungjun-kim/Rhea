@@ -34,6 +34,7 @@ export default function Filters({
             <button
               key={c}
               onClick={() => setCategory(c)}
+              aria-pressed={category === c}
               className={`pb-1 border-b transition-colors ${
                 category === c ? "text-ink border-ink" : "border-transparent hover:text-ink"
               }`}

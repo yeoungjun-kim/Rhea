@@ -8,7 +8,9 @@ export interface Product {
   sizes: Size[];
   hex: string;
   image: string;
+  imageLarge: string;
   desc: string;
+  details: string[];
 }
 
 export interface CartItem {

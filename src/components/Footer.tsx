@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer id="footer" className="border-t border-line py-14">
+    <footer id="footer" className="scroll-mt-20 border-t border-line py-14">
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between gap-8">
         <div>
           <p className="font-serif tracked-lg text-xl mb-3">RHEA</p>
