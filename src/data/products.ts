@@ -77,6 +77,30 @@ const SEEDS: ProductSeed[] = [
     desc: "Matte crepe, self-tie waist.",
     details: ["Triacetate and polyester matte crepe", "Wrap front, self-tie waist", "Three-quarter sleeve", "Made in Portugal", "Dry clean only"],
   },
+  {
+    id: "p13", name: "Silk Open-Back Blouse", category: "Tops", price: 820, sizes: ["XS", "S", "M", "L"], hex: "#e6e0d4",
+    photo: "https://images.unsplash.com/photo-1580598985914-441688a7f98a",
+    desc: "Washed silk crepe de chine, split back.",
+    details: ["100% washed silk crepe de chine", "Open split back, high neck", "Padded shoulder, long sleeve", "Made in Italy", "Dry clean only"],
+  },
+  {
+    id: "p14", name: "Gabardine Trench Coat", category: "Outerwear", price: 2240, sizes: ["XS", "S", "M", "L", "XL"], hex: "#9c8466",
+    photo: "https://images.unsplash.com/photo-1747042476734-dc4a41b705c0",
+    desc: "Cotton gabardine, oversized drop shoulder.",
+    details: ["100% water-resistant cotton gabardine", "Oversized fit, ankle length", "Detachable self-belt", "Made in England", "Dry clean only"],
+  },
+  {
+    id: "p15", name: "Alpaca Rib Cardigan", category: "Knitwear", price: 960, sizes: ["XS", "S", "M", "L"], hex: "#bcb8ae",
+    photo: "https://images.unsplash.com/photo-1636178566141-f5b806a2d2b3",
+    desc: "Brushed alpaca, chunky fisherman rib.",
+    details: ["70% baby alpaca, 30% merino wool", "Chunky fisherman rib, hand-linked", "Oversized fit, dropped shoulder", "Made in Peru", "Hand wash cold, dry flat"],
+  },
+  {
+    id: "p16", name: "Straight-Leg Raw Denim", category: "Trousers", price: 420, sizes: ["XS", "S", "M", "L", "XL"], hex: "#1f1e22",
+    photo: "https://images.unsplash.com/photo-1587763776627-6fd8b39365ce",
+    desc: "Selvedge denim, high rise, full length.",
+    details: ["100% Japanese selvedge cotton denim", "High rise, straight leg", "Five-pocket, button fly", "Made in Japan", "Wash inside out, cold"],
+  },
 ];
 
 export const PRODUCTS: Product[] = SEEDS.map(({ photo, ...rest }) => ({
